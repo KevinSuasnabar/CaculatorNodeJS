@@ -1,11 +1,13 @@
 language: node_js
 node_js: 
   - 12.11.0
-jdk:
-  - oraclejdk8
 addons:
-  sonarcloud: true
+  sonarcloud:
+    organization: "kevinsuasnabar"
+    token:
+      secure: $SONAR_TOKEN
+    projectKey: CalculatorNodeJS
+    sources: './app'
+
 script:
-  - sonar-scanner -Dsonar.login=$SONAR_TOKEN -Dsonar.organization=kevinsuasnabar-github -Dsonar.projectKey=CalculatorNodeJS -Dsonar.sources='./app' -X
-before_install:
-  - echo $SONAR_TOKEN
+  - sonar-scanner
