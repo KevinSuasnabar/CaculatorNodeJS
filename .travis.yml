@@ -6,4 +6,6 @@ jdk:
 addons:
   sonarcloud: true
 script:
-  - sonar-scanner -Dsonar.login=$SONAR_TOKEN -Dsonar.organization=kevinsuasnabar -Dsonar.projectKey=CalculatorNodeJS -Dsonar.sources='./app' -X  
+  - sonar-scanner -Dsonar.login=$SONAR_TOKEN -Dsonar.organization=kevinsuasnabar -Dsonar.projectKey=CalculatorNodeJS -Dsonar.sources='./app' -X
+before_install:
+  - echo $SONAR_TOKEN
