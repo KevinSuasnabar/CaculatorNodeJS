@@ -1,13 +1,12 @@
 language: node_js
 node_js: 
   - 12.11.0
+dist: trusty
+
 addons:
   sonarcloud:
-    organization: "kevinsuasnabar"
-    token:
-      secure: $SONAR_TOKEN
-    projectKey: CalculatorNodeJS
-    sources: './app'
+    organization: "kevinsuasnabar" # To find your organization, go to: https://sonarcloud.io/account/organizations
 
 script:
-  - sonar-scanner
+  # Put before sonar-scanner your other script steps
+  - sonar-scanner -Dsonar.verbose=true -X
